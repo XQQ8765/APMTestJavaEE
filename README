@@ -1,0 +1,17 @@
+1. Create parent pom
+d:\workspace\APM5\Testapp>mvn archetype:generate -DgroupId=com.quest.apm.testjavaee -DartifactId=APMTestJavaEE -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=pom-root
+
+2. Create EJB module
+d:\workspace\APM5\Testapp\APMTestJavaEE>mvn archetype:generate -DgroupId=com.quest.apm.testjavaee.ejb -DartifactId=ejb -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=ejb-javaee6
+
+3. Create Web module
+d:\workspace\APM5\Testapp\APMTestJavaEE>mvn archetype:generate -DgroupId=com.quest.apm.testjavaee.web -DartifactId=war -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=webapp-javaee6
+
+4. Create Ear module
+d:\workspace\APM5\Testapp\APMTestJavaEE>mvn archetype:generate -DgroupId=com.quest.apm.testjavaee -DartifactId=ear -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=ear-javaee6
+
+Genarate idea project files
+mvn idea:idea
+
+Build and install the packages:
+mvn install
