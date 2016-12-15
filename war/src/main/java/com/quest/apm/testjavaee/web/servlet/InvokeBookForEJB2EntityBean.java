@@ -1,15 +1,9 @@
 package com.quest.apm.testjavaee.web.servlet;
 
-import com.quest.apm.testjavaee.ejb.ejb2.BookEJB2Bean;
-import com.quest.apm.testjavaee.ejb.ejb2.BookLocalHome;
-import com.quest.apm.testjavaee.ejb.jpa.entity.Book;
-
-import javax.ejb.FinderException;
+import com.quest.apm.testjavaee.ejb.ejb2.entitybean.BookRemote;
+import com.quest.apm.testjavaee.ejb.ejb2.entitybean.BookRemoteHome;
+import javax.ejb.EJB;
 import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,7 +19,8 @@ import java.util.List;
  */
 @WebServlet("/InvokeBookForEJB2EntityBean")
 public class InvokeBookForEJB2EntityBean extends HttpServlet {
-	
+	@EJB
+	private BookRemoteHome bookRemoteHome;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -55,10 +51,11 @@ public class InvokeBookForEJB2EntityBean extends HttpServlet {
 		//TODO, modify
 		try {
 			InitialContext ic = new InitialContext();
-			BookLocalHome bookLocalHome = (BookLocalHome) ic.lookup("java:comp/env/ejb/BookEJB2Bean");
+			BookRemote bookRemote = bookRemoteHome.findByPrimaryKey(1);
 
-			List<BookEJB2Bean> bookList = null;
-			//List<BookEJB2Bean> bookList = (List<BookEJB2Bean>) bookLocalHome.findAll();
+			List<BookRemote> bookList = new ArrayList<BookRemote>();
+			bookList.add(bookRemote);
+
 			outputBookList(bookList, request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -66,7 +63,7 @@ public class InvokeBookForEJB2EntityBean extends HttpServlet {
 		}
 	}
 
-	private void outputBookList(List<BookEJB2Bean> bookList, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void outputBookList(List<BookRemote> bookList, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("Successfully get Book list:<br>");
@@ -75,7 +72,7 @@ public class InvokeBookForEJB2EntityBean extends HttpServlet {
 			out.println("Book list is empty.");
 		} else {
 			for (int i =0; i< bookList.size(); ++i) {
-				BookEJB2Bean book = bookList.get(i);
+				BookRemote book = bookList.get(i);
 				out.println("Book[" + i + "]: id:" + book.getId() + ", name:" + book.getName() + "<br/>");
 			}
 		}
