@@ -1,27 +1,20 @@
-package com.quest.apm.testjavaee.ejb.ejb2;
+package com.quest.apm.testjavaee.ejb.ejb2.entitybean;
 
 import javax.ejb.*;
 import java.rmi.RemoteException;
 
-/**
- * EJB2 entity bean
- */
-public abstract class BookEJB2Bean implements EntityBean {
-    public abstract int getId();
-    public abstract void setId(int id);
-    public abstract String getName();
-    public abstract void setName(String name);
+public abstract class TextEJB2EntityBean  implements EntityBean {
+    public abstract String getText();
+    public abstract void setText(String text);
 
-    public BookLocal ejbCreate(int bookId, String bookName) throws CreateException {
-        setId(bookId);
-        setName(bookName);
+    public BookRemote ejbCreate(String text) throws CreateException {
+        setText(text);
         return null;
     }
 
-    public void ejbPostCreate(int bookId, String bookName) throws CreateException {
+    public void ejbPostCreate(String text) throws CreateException {
 
     }
-
     public void setEntityContext(EntityContext entityContext) throws EJBException, RemoteException {
 
     }

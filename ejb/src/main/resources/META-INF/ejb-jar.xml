@@ -14,6 +14,43 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
         </session>
         <!--
         <entity>
+            <ejb-name>ejb/TextEJB2EntityBean</ejb-name>
+            <home>com.quest.apm.testjavaee.ejb.ejb2.entitybean.TextRemoteHome</home>
+            <remote>com.quest.apm.testjavaee.ejb.ejb2.entitybean.TextRemote</remote>
+            <ejb-class>com.quest.apm.testjavaee.ejb.ejb2.entitybean.TextEJB2EntityBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>False</reentrant>
+            <abstract-schema-name>texts</abstract-schema-name>
+            <cmp-field><field-name>text</field-name></cmp-field>
+            <primkey-field>text</primkey-field>
+            <security-identity>
+                <use-caller-identity/>
+            </security-identity>
+        </entity>
+        -->
+        <entity>
+            <ejb-name>ejb/BookEJB2EntityBean</ejb-name>
+            <home>com.quest.apm.testjavaee.ejb.ejb2.entitybean.BookRemoteHome</home>
+            <remote>com.quest.apm.testjavaee.ejb.ejb2.entitybean.BookRemote</remote>
+            <ejb-class>com.quest.apm.testjavaee.ejb.ejb2.entitybean.BookEJB2EntityBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>False</reentrant>
+            <abstract-schema-name>books</abstract-schema-name>
+            <cmp-field><field-name>id</field-name></cmp-field>
+            <!--
+            <cmp-field><field-name>name</field-name></cmp-field>
+            -->
+            <cmp-field><field-name>text</field-name></cmp-field>
+            <cmp-version>2.x</cmp-version>
+            <primkey-field>id</primkey-field>
+            <security-identity>
+                <use-caller-identity/>
+            </security-identity>
+        </entity>
+        <!--
+        <entity>
             <ejb-name>ejb/BookEJB2Bean</ejb-name>
             <local-home>com.quest.apm.testjavaee.ejb.ejb2.BookLocalHome</local-home>
             <local>com.quest.apm.testjavaee.ejb.ejb2.BookLocal</local>
@@ -31,4 +68,29 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
         </entity>
         -->
     </enterprise-beans>
+    <assembly-descriptor>
+        <security-role>
+            <description>
+                This role represents everyone who is allowed full access
+                to the Cabin EJB.
+            </description>
+            <role-name>everyone</role-name>
+        </security-role>
+
+        <method-permission>
+            <role-name>everyone</role-name>
+            <method>
+                <ejb-name>ejb/BookEJB2EntityBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+        </method-permission>
+
+        <container-transaction>
+            <method>
+                <ejb-name>ejb/BookEJB2EntityBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+    </assembly-descriptor>
 </ejb-jar>

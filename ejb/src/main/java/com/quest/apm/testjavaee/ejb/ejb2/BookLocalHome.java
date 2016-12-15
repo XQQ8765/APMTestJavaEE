@@ -6,7 +6,7 @@ import javax.ejb.FinderException;
 import java.util.Collection;
 
 public interface BookLocalHome extends EJBLocalHome {
-    public BookLocal findByPrimaryKey(Integer bookId) throws FinderException;
-    public BookLocal create(Integer bookId, String bookName) throws CreateException;
-    public Collection findAll() throws FinderException;
+    public BookLocal findByPrimaryKey(int bookId) throws FinderException;
+    public BookLocal create(int bookId, String bookName) throws CreateException;
+    //public Collection findAll() throws FinderException;
 }

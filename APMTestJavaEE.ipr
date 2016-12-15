@@ -218,6 +218,13 @@
     <mapping directory="" vcs="" />
   </component>
   <component name="libraryTable">
+    <library name="ejbdeploy">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../Websphere/lib/ejbdeploy.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="Maven: com.quest.apm.testjavaee.ejb:ejb:1.0-SNAPSHOT">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/com/quest/apm/testjavaee/ejb/ejb/1.0-SNAPSHOT/ejb-1.0-SNAPSHOT.jar!/" />

@@ -51,18 +51,17 @@ public class InvokeBookForEJB2EntityBean extends HttpServlet {
 	}
 
 	private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//TODO, modify
 		try {
 			InitialContext ic = new InitialContext();
 			BookLocalHome bookLocalHome = (BookLocalHome) ic.lookup("java:comp/env/ejb/BookEJB2Bean");
 
-			List<BookEJB2Bean> bookList = (List<BookEJB2Bean>) bookLocalHome.findAll();
+			List<BookEJB2Bean> bookList = null;
+			//List<BookEJB2Bean> bookList = (List<BookEJB2Bean>) bookLocalHome.findAll();
 			outputBookList(bookList, request, response);
-		} catch (NamingException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-			throw new ServletException("NamingException happens:" + e.getMessage(), e);
-		} catch (FinderException e) {
-			e.printStackTrace();
-			throw new ServletException("FinderException happens:" + e.getMessage(), e);
+			throw new ServletException("Exception happens:" + e.getMessage(), e);
 		}
 	}
 
