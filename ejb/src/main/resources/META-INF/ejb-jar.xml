@@ -3,6 +3,7 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
 
 <ejb-jar>
     <enterprise-beans>
+        <!--
         <entity id="Department">
             <ejb-name>Department</ejb-name>
             <home>com.quest.apm.testjavaee.ejb.ejb2.department.DepartmentHome</home>
@@ -23,6 +24,7 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
             </cmp-field>
             <primkey-field>id</primkey-field>
         </entity>
+        -->
         <!--
         <session>
             <description>Hello Bean</description>
@@ -51,7 +53,6 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
             </security-identity>
         </entity>
         -->
-        <!--
         <entity>
             <ejb-name>ejb/BookEJB2EntityBean</ejb-name>
             <home>com.quest.apm.testjavaee.ejb.ejb2.entitybean.BookRemoteHome</home>
@@ -60,16 +61,15 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
             <persistence-type>Container</persistence-type>
             <prim-key-class>java.lang.Integer</prim-key-class>
             <reentrant>False</reentrant>
+            <cmp-version>2.x</cmp-version>
             <abstract-schema-name>books</abstract-schema-name>
             <cmp-field><field-name>id</field-name></cmp-field>
             <cmp-field><field-name>text</field-name></cmp-field>
-            <cmp-version>2.x</cmp-version>
             <primkey-field>id</primkey-field>
             <security-identity>
                 <use-caller-identity/>
             </security-identity>
         </entity>
-        -->
         <!--
         <entity>
             <ejb-name>ejb/BookEJB2Bean</ejb-name>
