@@ -3,6 +3,27 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
 
 <ejb-jar>
     <enterprise-beans>
+        <entity id="Department">
+            <ejb-name>Department</ejb-name>
+            <home>com.quest.apm.testjavaee.ejb.ejb2.department.DepartmentHome</home>
+            <remote>com.quest.apm.testjavaee.ejb.ejb2.department.Department</remote>
+            <local-home>com.quest.apm.testjavaee.ejb.ejb2.department.DepartmentLocalHome</local-home>
+            <local>com.quest.apm.testjavaee.ejb.ejb2.department.DepartmentLocal</local>
+            <ejb-class>com.quest.apm.testjavaee.ejb.ejb2.department.DepartmentBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.Integer</prim-key-class>
+            <reentrant>false</reentrant>
+            <cmp-version>2.x</cmp-version>
+            <abstract-schema-name>Department</abstract-schema-name>
+            <cmp-field>
+                <field-name>id</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>description</field-name>
+            </cmp-field>
+            <primkey-field>id</primkey-field>
+        </entity>
+        <!--
         <session>
             <description>Hello Bean</description>
             <ejb-name>ejb/HelloBean</ejb-name>
@@ -12,6 +33,7 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
             <session-type>Stateful</session-type>
             <transaction-type>Container</transaction-type>
         </session>
+        -->    
         <!--
         <entity>
             <ejb-name>ejb/TextEJB2EntityBean</ejb-name>
@@ -29,6 +51,7 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
             </security-identity>
         </entity>
         -->
+        <!--
         <entity>
             <ejb-name>ejb/BookEJB2EntityBean</ejb-name>
             <home>com.quest.apm.testjavaee.ejb.ejb2.entitybean.BookRemoteHome</home>
@@ -39,9 +62,6 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
             <reentrant>False</reentrant>
             <abstract-schema-name>books</abstract-schema-name>
             <cmp-field><field-name>id</field-name></cmp-field>
-            <!--
-            <cmp-field><field-name>name</field-name></cmp-field>
-            -->
             <cmp-field><field-name>text</field-name></cmp-field>
             <cmp-version>2.x</cmp-version>
             <primkey-field>id</primkey-field>
@@ -49,6 +69,7 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
                 <use-caller-identity/>
             </security-identity>
         </entity>
+        -->
         <!--
         <entity>
             <ejb-name>ejb/BookEJB2Bean</ejb-name>
