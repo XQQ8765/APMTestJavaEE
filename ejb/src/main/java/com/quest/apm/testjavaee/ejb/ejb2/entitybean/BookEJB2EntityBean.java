@@ -15,12 +15,13 @@ public abstract class BookEJB2EntityBean implements EntityBean {
     public abstract String getName();
     public abstract void setName(String name);
 */
-    public Integer ejbCreate(Integer id) throws CreateException {
+    public Integer ejbCreate(Integer id, String text) throws CreateException {
         setId(id);
+        setText(text);
         return null;
     }
 
-    public void ejbPostCreate(Integer id) throws CreateException {
+    public void ejbPostCreate(Integer id, String text) throws CreateException {
 
     }
 
