@@ -11,10 +11,6 @@ import java.rmi.RemoteException;
 public interface BookRemote extends EJBObject {
     public Integer getId() throws RemoteException;
     public void setId(Integer id) throws RemoteException;
-    /*
     public String getName() throws RemoteException;
     public void setName(String name) throws RemoteException;
-    */
-    public String getText() throws RemoteException;
-    public void setText(String text) throws RemoteException;
 }

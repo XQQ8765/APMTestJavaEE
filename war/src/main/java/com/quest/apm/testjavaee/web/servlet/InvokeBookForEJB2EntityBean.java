@@ -24,6 +24,7 @@ import java.util.List;
  */
 @WebServlet("/InvokeBookForEJB2EntityBean")
 public class InvokeBookForEJB2EntityBean extends HttpServlet {
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
