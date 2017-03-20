@@ -218,12 +218,20 @@
     <mapping directory="" vcs="" />
   </component>
   <component name="libraryTable">
-    <library name="ejbdeploy">
+    <library name="ejb-1.0-SNAPSHOT">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../Websphere/lib/ejbdeploy.jar!/" />
+        <root url="jar://$PROJECT_DIR$/../../../tmp/EJB_instrument_learn/ejb-1.0-SNAPSHOT.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
+    </library>
+    <library name="EJB_instrument_learn">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/../../../tmp/EJB_instrument_learn" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/../../../tmp/EJB_instrument_learn" recursive="false" />
     </library>
     <library name="Maven: com.quest.apm.testjavaee.ejb:ejb:1.0-SNAPSHOT">
       <CLASSES>
