@@ -47,5 +47,19 @@
                     <li><a href="${pageContext.request.contextPath }/InvokeTestStatelessSessionBean?type=local">/InvokeTestStatelessSessionBean?type=local</a></li>
                     <li><a href="${pageContext.request.contextPath }/InvokeTestStatelessSessionBean?type=remote">/InvokeTestStatelessSessionBean?type=remote</a></li>
                 </ul>
+
+        <h3>InvokeCalculate</h3>
+        <ul>
+         <li><a href="${pageContext.request.contextPath }/InvokeCalculate">InvokeCalculate</a></li>
+        </ul>
+
+        <h3>InvokeHighCPULoad</h3>
+        <h6>(Note: 1 loop 0-100,000: spend nearly 2s )<h6/><br/>
+        <h6>(Note: 1 loop 0-1,000,000: spend nearly 20s )<h6/><br/>
+        <h6>(Note: 1 loop 0-10,000,000: spend nearly 200s )<h6/><br/>
+                <ul>
+                 <li><a href="${pageContext.request.contextPath }/InvokeHighCPULoad?loopTimes=1&minV=0&maxV=10000000">InvokeHighCPULoad?loopTimes=1&minV=0&maxV=10000000</a></li>
+                 <li><a href="${pageContext.request.contextPath }/InvokeHighCPULoad?loopTimes=1&minV=0&maxV=10000000&multithread=true&threadCount=4">InvokeHighCPULoad?loopTimes=1&minV=0&maxV=10000000&multithread=true&threadCount=4</a></li>
+                </ul>
     </body>
 </html>

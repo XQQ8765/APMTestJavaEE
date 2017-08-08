@@ -30,6 +30,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/ejb/src/main/resources/META-INF/ejb-jar.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/war" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/war/src/main/java/com/quest/apm/testjavaee/PostCalculate.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/war/src/main/java/com/quest/apm/testjavaee/web/servlet/InvokeTestStatelessSessionBean.java" charset="GBK" />
   </component>
   <component name="EntryPointsManager">
