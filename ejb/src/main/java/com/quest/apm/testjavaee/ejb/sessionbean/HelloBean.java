@@ -9,8 +9,8 @@ import javax.ejb.*;
 public class HelloBean implements SessionBean
 {
     public String helloWorld ()   {
-        return "Hello from com.quest.apm.testjavaee.ejb.sessionbean.HelloBean";
-    }
+    return "Hello from com.quest.apm.testjavaee.ejb.sessionbean.HelloBean";
+}
 
     public void ejbCreate () throws CreateException {}
     public void ejbRemove () {}

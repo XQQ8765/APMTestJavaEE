@@ -50,7 +50,11 @@ public class InvokeBookForJPA extends HttpServlet {
 
 	private void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		List<Book> bookList = entityManager.createQuery("From Book b").getResultList();
+		String queryStr = request.getParameter("queryStr");
+		if (queryStr == null || queryStr.trim().length() == 0) {
+			queryStr = "SELECT b From Book b";
+		}
+		List<Book> bookList = entityManager.createQuery(queryStr).getResultList();
 		outputBookList(bookList, request, response);
 		entityManager.close();
 	}

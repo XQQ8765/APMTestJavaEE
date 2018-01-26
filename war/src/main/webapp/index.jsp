@@ -32,6 +32,12 @@
 
     </div>
         <h1>APMTestJavaEE</h1>
+
+        <h3>InvokeAnnotation</h3>
+        <ul>
+            <li><a href="${pageContext.request.contextPath }/InvokeAnnotation">InvokeAnnotation</a></li>
+        </ul>
+
         <h3>Entity Bean</h3>
         <ul>
             <li><a href="${pageContext.request.contextPath }/InvokeBookForJPA">InvokeBookForJPA</a></li>
@@ -41,6 +47,7 @@
         <ul>
             <li><a href="${pageContext.request.contextPath }/InvokeLocalHelloBean?beanJndiName=java:comp/env/com.quest.apm.testjavaee.web.servlet.InvokeLocalHelloBeanWithAnnotation/helloLocalHome">InvokeLocalHelloBean (Stateful Session Bean)</a></li>
             <li><a href="${pageContext.request.contextPath }/InvokeLocalHelloBeanWithAnnotation">InvokeLocalHelloBeanWithAnnotation (Stateful Session Bean)</a></li>
+            <li><a href="${pageContext.request.contextPath }/InvokeVertragEnityDTOWithAnnotation">InvokeVertragEnityDTOWithAnnotation (Stateful Session Bean)</a></li>
         </ul>
         <h3>Session Bean: EJB3 with annotation</h3>
                 <ul>

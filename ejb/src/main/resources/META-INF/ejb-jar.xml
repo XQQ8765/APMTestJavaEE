@@ -34,6 +34,15 @@ JavaBeans 2.0//EN" "http://java.sun.com/dtd/ejb-jar_2_0.dtd">
             <session-type>Stateful</session-type>
             <transaction-type>Container</transaction-type>
         </session>
+        <session>
+            <description>VertragEntityDTO</description>
+            <ejb-name>ejb/VertragEntityDTO</ejb-name>
+            <local-home>com.quest.apm.testjavaee.ejb.sessionbean.dto.VertragEntityDTOHome</local-home>
+            <local>com.quest.apm.testjavaee.ejb.sessionbean.dto.VertragEntityDTOLocal</local>
+            <ejb-class>com.quest.apm.testjavaee.ejb.sessionbean.dto.VertragEntityDTO</ejb-class>
+            <session-type>Stateful</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
         <entity>
             <ejb-name>ejb/BookEJB2EntityBean</ejb-name>
             <home>com.quest.apm.testjavaee.ejb.ejb2.entitybean.BookRemoteHome</home>

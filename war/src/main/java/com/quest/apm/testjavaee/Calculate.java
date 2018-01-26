@@ -1,5 +1,10 @@
 package com.quest.apm.testjavaee;
 
+import java.lang.annotation.Documented;
+import java.lang.annotation.Inherited;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 public class Calculate {
     boolean addOperate;
     public Calculate() {
@@ -34,4 +39,5 @@ public class Calculate {
         int result2 = calculate2.calculate(i, j);
         System.out.println("######################Calculate result2:" + result2);
     }
+
 }
