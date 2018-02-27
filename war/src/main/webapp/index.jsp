@@ -38,6 +38,11 @@
             <li><a href="${pageContext.request.contextPath }/InvokeAnnotation">InvokeAnnotation</a></li>
         </ul>
 
+        <h3>InvokeApacheHttpClient</h3>
+                <ul>
+                    <li><a href="${pageContext.request.contextPath }/InvokeApacheHttpClient">InvokeApacheHttpClient</a></li>
+                </ul>
+
         <h3>Entity Bean</h3>
         <ul>
             <li><a href="${pageContext.request.contextPath }/InvokeBookForJPA">InvokeBookForJPA</a></li>
